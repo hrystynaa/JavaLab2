@@ -8,6 +8,9 @@ public class MatrixCalculator {
     private final short[][] matrixB;
     private final short[][] matrixC;
     public MatrixCalculator(int m, int n) {
+        if (m <= 0 || n <= 0) {
+            throw new IllegalArgumentException("Error: Matrix dimensions must be positive!");
+        }
         this.m = m;
         this.n = n;
         this.matrixA = new short[m][n];
